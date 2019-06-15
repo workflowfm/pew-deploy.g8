@@ -1,14 +1,22 @@
-import Dependencies._
+ThisBuild / scalaVersion     := "2.12.6"
+ThisBuild / version          := "$version$"
+ThisBuild / organization     := "$organization$"
 
-ThisBuild / scalaVersion     := "2.13.0"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
+// Fixes some sbt import problems.
+// https://github.com/sbt/sbt-native-packager/issues/1063
+resolvers += Resolver.sbtPluginRepo("releases")
 
 lazy val root = (project in file("."))
   .settings(
     name := "$name$",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.0-SNAP10" % Test,
+    
+    libraryDependencies += "com.workflowfm" %% "pew" % "1.3.0-SNAPSHOT",
+
+    libraryDependencies += "com.typesafe.akka" %% "akka-stream-kafka" % "0.21.1",
+    libraryDependencies += "com.typesafe.akka" %% "akka-stream"       % "2.5.13",
+
+    libraryDependencies += "org.apache.kafka"  %% "kafka"             % "1.1.0",
+    libraryDependencies += "org.apache.kafka"  %  "kafka-streams"     % "1.1.0"
   )
 
-// See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
