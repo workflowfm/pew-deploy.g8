@@ -6,7 +6,7 @@ It sets up the appropriate sbt files and associated dependencies.
 
 ## Usage:
 
-`sbt new PetrosPapapa/pew-deploy.g8`
+`sbt new WorkflowFM/pew-deploy.g8`
 
 This will prompt you for a *project name* (among other options) and will build a directory with that name.
 
