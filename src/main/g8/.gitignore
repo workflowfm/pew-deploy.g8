@@ -16,3 +16,6 @@ logs
 .ensime_cache/
 *.py
 *.vscode
+.bloop/
+.metals/
+project/metals.sbt
